@@ -10,6 +10,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Button, Provider, Toast } from '@ant-design/react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,11 +23,16 @@ interface Props {}
 export default class App extends Component<Props> {
   render() {
     return (
+      <Provider>
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native with Typescript!</Text>
-        <Text style={styles.instructions}>To get started, edit App.tsx</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+          <Text style={styles.welcome}>Welcome to React Native with Typescript!</Text>
+          <Text style={styles.instructions}>To get started, edit App.tsx</Text>
+          <Text style={styles.instructions}>{instructions}</Text>
+          <Button onPress={() => Toast.info('This is a toast tip!')}>
+            Start
+          </Button>
       </View>
+      </Provider>
     );
   }
 }
