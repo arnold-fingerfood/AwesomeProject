@@ -28,7 +28,7 @@ export default class App extends Component<Props> {
           <Text style={styles.welcome}>Welcome to React Native with Typescript!</Text>
           <Text style={styles.instructions}>To get started, edit App.tsx</Text>
           <Text style={styles.instructions}>{instructions}</Text>
-          <Button onPress={() => Toast.info('This is a toast tip!')}>
+          <Button type='warning' size='large' onPress={() => Toast.info('This is a toast tip!')}>
             Start
           </Button>
       </View>
